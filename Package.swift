@@ -22,7 +22,7 @@ let package = Package(
     targets: [
         .target(
             name: "TorusUtils",
-            dependencies: [.product(name: "FetchNodeDetails", package: "fetch-node-details-swift"), "CryptoSwift", "PMKFoundation", "TweetNacl"]),
+            dependencies: [.product(name: "fetch-node-details-swift", package: "fetch-node-details-swift"), "CryptoSwift", "PMKFoundation", "TweetNacl"]),
         .testTarget(
             name: "TorusUtilsTests",
             dependencies: ["TorusUtils","CryptoSwift",.product(name: "JWTKit", package: "jwt-kit"), "FetchNodeDetails", "PMKFoundation"]),
