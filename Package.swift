@@ -25,6 +25,6 @@ let package = Package(
             dependencies: [.product(name: "FetchNodeDetails", package: "fetch-node-details-swift"), "CryptoSwift", "PMKFoundation", "TweetNacl"]),
         .testTarget(
             name: "TorusUtilsTests",
-            dependencies: ["TorusUtils","CryptoSwift",.product(name: "JWTKit", package: "jwt-kit"), "FetchNodeDetails", "PMKFoundation"]),
+            dependencies: ["TorusUtils","CryptoSwift",.product(name: "JWTKit", package: "jwt-kit"), .product(name: "FetchNodeDetails", package: "fetch-node-details-swift"), "PMKFoundation"]),
     ]    
 )
