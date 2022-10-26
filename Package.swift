@@ -13,7 +13,7 @@ let package = Package(
             targets: ["TorusUtils"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Perpetual-Altruism-Ltd/fetch-node-details-swift.git", branch: "master"),
+        .package(url: "https://github.com/Perpetual-Altruism-Ltd/fetch-node-details-swift.git", from: "2.7.0"),
         .package(name:"PMKFoundation", url: "https://github.com/PromiseKit/Foundation.git", from: "3.4.0"),
         .package(name:"CryptoSwift", url: "https://github.com/krzyzanowskim/CryptoSwift.git",from: "1.5.1"),
         .package(name:"jwt-kit", url: "https://github.com/vapor/jwt-kit.git", from: "4.0.0"),
@@ -22,7 +22,7 @@ let package = Package(
     targets: [
         .target(
             name: "TorusUtils",
-            dependencies: ["FetchNodeDetails", "CryptoSwift", "PMKFoundation", "TweetNacl"]),
+            dependencies: [.product(name: "FetchNodeDetails", package: "fetch-node-details-swift"), "CryptoSwift", "PMKFoundation", "TweetNacl"]),
         .testTarget(
             name: "TorusUtilsTests",
             dependencies: ["TorusUtils","CryptoSwift",.product(name: "JWTKit", package: "jwt-kit"), "FetchNodeDetails", "PMKFoundation"]),
